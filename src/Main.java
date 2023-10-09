@@ -10,9 +10,9 @@ public class Main {
 
     public static void main(String[] args) {
         Runnable runnable = () -> {
+            String str = generateRoute("RLRFR", 100);
+            Integer count = (int) getCountRepeatSymbol(str, 'R');
             synchronized (sizeToFreq) {
-                String str = generateRoute("RLRFR", 100);
-                Integer count = (int) getCountRepeatSymbol(str, 'R');
                 if (sizeToFreq.containsKey(count)) {
                     int value = sizeToFreq.get(count);
                     value++;
